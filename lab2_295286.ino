@@ -350,7 +350,7 @@ const String STYLES = R"=====(
     width: 100%;
     padding: 12px 6px;
     border: 2px solid #e9ecef;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 16px;
     transition: all 0.3s;
   }
@@ -361,7 +361,7 @@ const String STYLES = R"=====(
   }
   .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 12px 6px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -419,7 +419,7 @@ const String STYLES = R"=====(
 
 // ================= Updated launchUserUI() Function =================
 void launchUserUI() {
-  // Login Page (unchanged)
+  // Login Page 
   server.on("/", []() {
     String content = String("<!DOCTYPE html><html><head>") +
       "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
@@ -444,7 +444,7 @@ void launchUserUI() {
     server.send(200, "text/html", content);
   });
 
-  // Authentication Handler (unchanged)
+  // Authentication Handler 
   server.on("/auth", HTTP_POST, []() {
       String username = server.arg("username");
       String pass = server.arg("pass");
@@ -560,7 +560,7 @@ void launchUserUI() {
   server.send(200, "text/html", homePage);
   });
 
-  // Device Control Page (unchanged)
+  // Device Control Page 
   server.on("/select", []() {
     String content = String("<!DOCTYPE html><html><head>") +
       "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
@@ -737,7 +737,7 @@ void launchUserUI() {
     server.send(200, "text/html", page);
     });
 
-  // Get Message Endpoint (unchanged)
+  // Get Message Endpoint 
   server.on("/getMessage", []() {
     String deviceId = server.arg("device_id");
     String path = "/devices/" + deviceId + "/message";
@@ -916,6 +916,7 @@ void writeData(String a, String b, String c) {
   EEPROM.commit();
 }
 
+// ================= Main Functions =================
 void setup() {
   // Hardware Initialization
   pinMode(2, OUTPUT);
