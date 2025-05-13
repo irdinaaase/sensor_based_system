@@ -1,6 +1,3 @@
-/************************************************************
- * Revised Code to Match Flowchart Exactly
- ************************************************************/
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 #include <EEPROM.h>
